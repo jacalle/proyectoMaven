@@ -4,10 +4,10 @@ pipeline {
 	
 	stages {
 	    stage("Etapa 1"){
-	        steps{                        // hacemos las llamadas a los plugins
-	            sh "echo Soy la Etapa 1"  // llamada al plugin que ejectua una Shell
+	        steps{                             // hacemos las llamadas a los plugins
+	            sh "echo Soy la Etapa 1"       // llamada al plugin que ejectua una Shell
 	            sh "echo sigo en la Etapa 1"  // llamada al plugin que ejectua una Shell
-	            sh "acabo la Etapa 1"  // llamada al plugin que ejectua una Shell
+	            sh "acabo la Etapa 1"         // llamada al plugin que ejectua una Shell
 	       }
 	       post{                 // postareas
 	           always {           //* postareas que se ejecutan siempre
