@@ -6,6 +6,20 @@ pipeline {
 	    stage("Etapa 1"){
 	        steps{                        // hacemos las llamadas a los plugins
 	            sh "echo Soy la Etapa 1"  // llamada al plugin que ejectua una Shell
+	            sh "echo sigo en la Etapa 1"  // llamada al plugin que ejectua una Shell
+	            sh "acabo la Etapa 1"  // llamada al plugin que ejectua una Shell
+	       }
+	       post{                 // postareas
+	           always {           //* postareas que se ejecutan siempre
+	               sh "echo la Etapa 1 se ejecutó"  // llamada al plugin que ejectua una Shell
+	           }
+	           success {          //* postareas si acaba bien
+	               sh "echo la Etapa 1 acabó que te cagas"
+	           }
+	           failure {           // postareas si falla
+	               sh "echo la Etapa 1 cascó"
+	           }
+	           
 	       }
 	    }
         stage("Etapa 2"){
@@ -17,4 +31,16 @@ pipeline {
             }
         }
     }
+   post{                 // postareas
+       always {           //* postareas que se ejecutan siempre
+           sh "echo todo se ejecutó"  // llamada al plugin que ejectua una Shell
+       }
+       success {          //* postareas si acaba bien
+           sh "echo todo acabó que te cagas"
+       }
+       failure {           // postareas si falla
+           sh "echo algo cascó"
+       }
+	           
+   }
 }
