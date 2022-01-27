@@ -7,7 +7,7 @@ pipeline {
 	        steps{                             // hacemos las llamadas a los plugins
 	            sh "echo Soy la Etapa 1"    
 	            sh "echo sigo en la Etapa 1"
-	            sh "acabo la Etapa 1"
+	            sh "echo acabo la Etapa 1"
 	       }
 	       post{                 // postareas
 	           always {           //* postareas que se ejecutan siempre
