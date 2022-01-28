@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("Compilación") {
             steps{
-            sh "mvn compile"
+                sh "mvn compile"
             }
         }
         stage("Pruebas") {
@@ -52,7 +52,7 @@ pipeline {
                                 -Dsonar.host.url=http://172.31.8.238:8081 \
                                 -Dsonar.login=83647c2ef81c74e83e1a19375c57d1e971b0232c
                             """
-                    
+                        }
                         timeout(time: 10, unit: 'MINUTES'){
                             waitForQualityGate abortPipeline: true
                         }
@@ -76,5 +76,4 @@ pipeline {
             cleanWs deleteDirs: true, patterns: [[pattern: 'target', type: 'INCLUDE']]
         }
     }
-}
 }
